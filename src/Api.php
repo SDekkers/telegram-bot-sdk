@@ -1128,6 +1128,20 @@ class Api
 
         return $this->uploadFile('setWebhook', $params);
     }
+    
+	/**
+	 * Get information related to the status of the configured webhook, if any.
+	 *
+	 * @link https://core.telegram.org/bots/api#getwebhookinfo
+	 *
+	 * @throws TelegramSDKException
+	 *
+	 * @return TelegramResponse
+	 */
+    public function getWebhook()
+    {
+        return $this->post('getWebhookInfo')->getDecodedBody();
+    }    
 
     /**
      * Returns a webhook update sent by Telegram.
