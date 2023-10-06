@@ -51,10 +51,11 @@ class GuzzleHttpClient implements HttpClientInterface
 
     /**
      * Unwrap Promises.
+     * @throws \Throwable
      */
     public function __destruct()
     {
-        Promise\unwrap(self::$promises);
+        Promise\Utils::unwrap(self::$promises);
     }
 
     /**
